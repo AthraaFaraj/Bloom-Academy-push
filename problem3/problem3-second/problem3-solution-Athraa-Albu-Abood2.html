@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+      html{
+  background-color: #EBCCA9;
+}
+#item:focus {
+  outline: none;
+}
+#count:focus {
+  outline: none;
+  
+}
+    body {
+      font-family: "Roboto", sans-serif;
+    }
+    h2 {
+      /* text-align: center; */
+      color: #034848;
+    }
+    header{
+        margin: 9px 0px 0px 46px;
+    
+    display: flex;
+    flex-direction: row;
+    }
+   
+    table,
+    form {
+      width: 500px;
+      font-size: 20px;
+    
+    margin: 20px 0px;
+    
+      /* margin: 20px auto; */
+      align-items: center;
+    }
+    table {
+      /* border: none; */
+      text-align: center;
+      border-collapse: collapse;
+     
+    }
+    table td {
+        padding: 6px;
+        border-bottom: 1px solid #034848;
+      
+      
+    }
+    table th {
+        padding: 11px;
+    border: 2px solid #034848;
+        color: #EBCCA9;
+        background-color:#034848;
+    }
+    label{
+       margin: 0px 20px;
+       background-color: #034848;
+    padding: 8px;
+    border-radius: 30px;
+    margin: 0px 20px;
+    color: #EBCCA9;
+    width: 70px;
+    }
+    input {
+        width: 18rem;
+  border-radius: 50px;
+  border: 2px solid #034848;
+  font-size: 1rem ;
+  /* margin: 10px auto; */
+  background: transparent;
+  color: #034848;
+    }
+    /* button {
+      display: block;
+    } */
+    .container{
+        /* background-color: #211F01; */
+  /* min-height: 100vh; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: #034848;
+  /* margin: 5% ; */
+  padding: 20px;
+  /* border: 1px solid #61dafb; */
+  text-align: center;
+  width: 50%;
+  min-height: 300px;
+  height: 100%;
+  /* box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2), 0 20px 30px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 30px; */
+       
+       
+    }
+    .input-row{
+        display: flex;
+        flex-direction: row;
+  /* align-items: center; */
+  justify-content: center;
+  margin: 0px 20px;
+  margin-left: -88px;
+  padding: 10px 20px;
+
+    }
+    .mybtn{
+        width: 20%;
+    height: 47px;
+    border-radius: 27px;
+    color: #EBCCA9;
+    background: #034848;
+    font-size: 1.4rem;
+    border: none;
+    margin: 20px 10px 30px 10px;
+    cursor: pointer;
+        
+        /* background-color: cyan;
+        padding: 10px;
+       
+        color: darkblue;
+        font-weight: bold;
+        font-size: 20px;
+        margin: 20px 0px;
+        cursor: pointer;
+        border-radius: 30px;
+        margin-left: 10px; */
+
+       
+    }
+    .deleteBtn{
+        background-color: #034848;
+    border-radius: 20px;
+        width: 70px;
+        padding: 5px 3px;
+        border: none;
+       cursor: pointer;
+       color:#EBCCA9;
+       font-size: 20px;
+
+        
+    }
+    .btnn{
+        /* align-items: center;   */
+        /* background-color: rgb(172, 129, 138); */
+        
+        margin: 20px 0px;}
+        .logo{
+            width: 50px;
+            margin-top: 11px;
+            margin-left: 20px;
+            margin-right: 29px;
+        }
+        .containerHome{
+display: flex;
+flex-direction: row;
+/* justify-content: space-evenly; */
+margin: 20px;
+        }
+        .img{
+            width: 80%;
+            height: 60%;
+    margin-left: 133px;
+    box-shadow: rgb(167, 153, 2) 15px;
+        }
+        .contentImg{
+            padding: 20px;
+  /* border: 1px solid #61dafb; */
+  text-align: center;
+  width: 50%;
+  min-height: 300px;
+  height: 100%;
+        }
+    
+  </style>
+    
+</head>
+<body>
+    <header>
+    
+    <div>
+    <img src="2.png" alt="" class="logo">
+</div>
+<h2>Fridge Website</h2>
+</header>
+    <div class="containerHome">
+    <div class="container">
+    <form>
+      <div class="input-row">
+        <label for="item">Item</label>
+        <input type="text" name="text" id="item" />
+      </div>
+      <div class="input-row">
+        <label for="count">count</label>
+        <input type="text" name="count" id="count" />
+      </div>
+      
+    </form>
+    
+        <button class="mybtn">Add Item</button>
+    
+    <table>
+      <thead>
+        <tr>
+          <th><b>Item</b></th>
+          <th> <b>Count</b> </th>
+          <th><b>Remove</b> </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+            <td>Cucumber</td>
+            <td>3</td>
+            <td><button id="bt" class="deleteBtn" onClick="RemovingItems(e)">X</button></td>
+          </tr>
+          <tr>
+            <td>Lettuce</td>
+            <td>5</td>
+            <td><button class="deleteBtn" onClick="RemovingItems(e)">X</button></td>
+          </tr>
+      </tbody>
+    </table>
+</div>
+<div class="contentImg">
+<img src="contact-img.jpg" alt="" class="img">
+</div>
+</div>
+    <script>
+      const mybtn = document.querySelector(".mybtn");
+      const tbodyEl = document.querySelector("tbody");
+      const tableEl = document.querySelector("table");
+      function AddingItems(e) {
+        e.preventDefault();
+        const item = document.getElementById("item");
+        const count = document.getElementById("count");
+        
+    
+
+     if (item.value!="" && count.value!="") {
+         
+     
+        tbodyEl.innerHTML += `
+            <tr>
+                <td>${item.value}</td>
+                <td>${count.value}</td>
+                <td><button class="deleteBtn" ${onClick="RemovingItems(e)"}>X</button></td>
+            </tr>
+        `;
+     }
+     item.value="";
+     count.value=""
+      }
+
+
+      function RemovingItems(e) {
+        if (!e.target.classList.contains("deleteBtn")) {
+          return;
+        }
+
+        const btn = e.target;
+        // btn.closest("tr").remove();
+        btn.closest("tr").style.display="none";
+      }
+
+      mybtn.addEventListener("click", AddingItems);
+      tableEl.addEventListener("click", RemovingItems);
+    //    for (let i = 0; i < btn1.length; i++) {
+    //         btn1[i].addEventListener("click", ()=>{
+    //           btn1[i].parentElement.style.display="none";
+    //         })
+     
+    </script>
+    
+</body>
+</html>
